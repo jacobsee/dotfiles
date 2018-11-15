@@ -5,5 +5,5 @@
     - {role: vim, tags: ['vim']}
     - {role: exfat, tags: ['exfat']}
     - {role: virtualization, tags: ['virtualization']}
-    # - {role: tmux, tags: ['tmux']}
+    - {role: tmux, tags: ['tmux']}
     # git, virtualization, stuff...

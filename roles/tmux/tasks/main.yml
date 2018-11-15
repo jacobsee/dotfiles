@@ -1,0 +1,18 @@
+- name: install tmux
+  dnf:
+    name: tmux
+    state: latest
+  become: yes
+  become_method: sudo
+- name: clone tmux package manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+    force: yes
+- name: set configs
+  copy:
+    src: files/.tmux.conf
+    dest: ~/.tmux.conf
+- name: display tmux final setup
+  debug:
+    msg: "You should enter a tmux session and press <Prefix + I> to finish TPM setup. Prefix as of right now is <Ctrl-A>. To default to a tmux session on new terminal, configure your terminal to use the following command instead of a shell: `tmux new-session -A -s main`"
