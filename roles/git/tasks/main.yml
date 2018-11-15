@@ -1,0 +1,19 @@
+- name: copy global gitignore
+  copy: 
+    src: files/.gitignore_global
+    dest: ~/.gitignore_global
+- name: set git username
+  git_config:
+    name: user.name
+    scope: global
+    value: Jacob See
+- name: set git email
+  git_config:
+    name: user.email
+    scope: global
+    value: jacob.d.see@gmail.com
+- name: set git ignore file
+  git_config:
+    name: core.excludesfile
+    scope: global
+    value: "{{ ansible_env.HOME }}/.gitignore_global"

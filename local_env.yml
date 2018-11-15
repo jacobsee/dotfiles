@@ -6,4 +6,4 @@
     - {role: exfat, tags: ['exfat']}
     - {role: virtualization, tags: ['virtualization']}
     - {role: tmux, tags: ['tmux']}
-    # git, virtualization, stuff...
+    - {role: git, tags: ['git']}
