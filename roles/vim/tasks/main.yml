@@ -10,7 +10,9 @@
     dest: ~/.vim_runtime
     force: yes
 - name: prepare ultimate vimrc install script
-  file: dest=~/.vim_runtime/install_awesome_vimrc.sh mode=a+x
+  file: 
+    dest: ~/.vim_runtime/install_awesome_vimrc.sh 
+    mode: a+x
 - name: install ultimate vimrc
   shell: ~/.vim_runtime/install_awesome_vimrc.sh
 - name: set custom configs
