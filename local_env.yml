@@ -1,0 +1,9 @@
+- name: Set up local environment
+  hosts: local
+  roles:
+    - {role: rpmfusion, tags: ['rpmfusion']}
+    - {role: vim, tags: ['vim']}
+    - {role: exfat, tags: ['exfat']}
+    - {role: virtualization, tags: ['virtualization']}
+    # - {role: tmux, tags: ['tmux']}
+    # git, virtualization, stuff...

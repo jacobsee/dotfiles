@@ -1,0 +1,11 @@
+- name: install the virtualization package group
+  dnf: 
+    name: "@virtualization"
+    state: present
+  become: yes
+  become_method: sudo
+- name: enable and start the libvirtd service
+  systemd:
+    name: libvirtd
+    state: started
+    enabled: yes

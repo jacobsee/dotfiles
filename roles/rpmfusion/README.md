@@ -1,0 +1,4 @@
+rpmfusion
+=====
+
+installs rpmfusion repos

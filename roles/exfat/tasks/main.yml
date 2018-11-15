@@ -1,0 +1,6 @@
+- name: install exfat
+  dnf: 
+    name: fuse-exfat 
+    state: latest
+  become: yes
+  become_method: sudo

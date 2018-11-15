@@ -1,0 +1,19 @@
+- name: install vim
+  dnf: 
+    name: vim 
+    state: latest
+  become: yes
+  become_method: sudo
+- name: clone ultimate vimrc
+  git:
+    repo: https://github.com/amix/vimrc.git
+    dest: ~/.vim_runtime
+    force: yes
+- name: prepare ultimate vimrc install script
+  file: dest=~/.vim_runtime/install_awesome_vimrc.sh mode=a+x
+- name: install ultimate vimrc
+  shell: ~/.vim_runtime/install_awesome_vimrc.sh
+- name: set custom configs
+  copy: 
+    src: files/vimrc 
+    dest: ~/.vim_runtime/my_configs.vim
