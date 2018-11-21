@@ -1,0 +1,14 @@
+- name: Add fish repository
+  shell: dnf config-manager --add-repo https://download.opensuse.org/repositories/shells:fish:release:2/Fedora_27/shells:fish:release:2.repo
+  become: yes
+  become_method: sudo
+- name: install fish shell
+  dnf: 
+    name: fish
+    state: latest
+  become: yes
+  become_method: sudo
+- name: set custom configs
+  copy: 
+    src: files/config.fish
+    dest: ~/.config/fish/config.fish

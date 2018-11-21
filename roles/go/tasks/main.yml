@@ -1,0 +1,26 @@
+- name: install go
+  dnf: 
+    name: golang
+    state: latest
+  become: yes
+  become_method: sudo
+- name: create workspace
+  file:
+    path: ~/go
+    state: directory
+- name: create src directory in workspace
+  file:
+    path: ~/go/src
+    state: directory
+- name: create bin directory in workspace
+  file:
+    path: ~/go/bin
+    state: directory
+- name: add GOPATH to fish config
+  lineinfile:
+    path: ~/.config/fish/config.fish
+    line: export GOPATH=$HOME/go
+- name: add bin directory to PATH
+  lineinfile:
+    path: ~/.config/fish/config.fish
+    line: set PATH (go env GOPATH)/bin $PATH

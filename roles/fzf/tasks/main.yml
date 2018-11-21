@@ -1,0 +1,6 @@
+- name: install fzf
+  dnf: 
+    name: fzf 
+    state: latest
+  become: yes
+  become_method: sudo

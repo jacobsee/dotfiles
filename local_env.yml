@@ -2,8 +2,11 @@
   hosts: local
   roles:
     - {role: rpmfusion, tags: ['rpmfusion']}
+    - {role: fish, tags: ['fish']}
+    - {role: tmux, tags: ['tmux']}
     - {role: vim, tags: ['vim']}
+    - {role: git, tags: ['git']}
+    - {role: go, tags: ['go']}
     - {role: exfat, tags: ['exfat']}
     - {role: virtualization, tags: ['virtualization']}
-    - {role: tmux, tags: ['tmux']}
-    - {role: git, tags: ['git']}
+    - {role: fzf, tags: ['fzf']}
