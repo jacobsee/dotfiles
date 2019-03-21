@@ -17,3 +17,6 @@
     name: core.excludesfile
     scope: global
     value: "{{ ansible_env.HOME }}/.gitignore_global"
+- name: display signed commit info
+  debug:
+    msg: "This playbook does not set up signed commits. Please see https://help.github.com/categories/authenticating-to-github/ for that, and don't forget `git config --global gpg.program gpg2` if the gpg2 tool is used instead."
